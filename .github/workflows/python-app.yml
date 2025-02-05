@@ -24,10 +24,9 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.12.5'
-
-    - name: Install dependencies
-      run: |
-        pip install requests
         
     - name: Run the secret script
-      run: python main.py ${{env.SECRET_KEY_ENV}} ${{secrets.SUPER_SECRET_KEY_ENV}}
+      run: python main.py $SECRET_KEY $REAL_KEY
+      env:
+        SECRET_KEY: My secret key (fake)
+        REAL_KEY: ${{ secrets.SUPER_SECRET_KEY_ENV }}
