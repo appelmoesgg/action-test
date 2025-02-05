@@ -28,5 +28,5 @@ jobs:
     - name: Run the secret script
       run: python main.py $SECRET_KEY $REAL_KEY
       env:
-        SECRET_KEY: My secret key (fake)
+        SECRET_KEY: SECRET_KEY
         REAL_KEY: ${{ secrets.SUPER_SECRET_KEY_ENV }}
