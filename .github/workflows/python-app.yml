@@ -30,4 +30,4 @@ jobs:
         pip install requests
         
     - name: Run the secret script
-      run: python main.py
+      run: python main.py env.SECRET_KEY_ENV secrets.SUPER_SECRET_KEY_ENV
